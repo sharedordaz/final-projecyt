@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="spacer"></div>
+  <div class="row" style="padding: 10px;">
+    <div class="input-group pull-left pad-left-right col-xs-7">
+      <input type="text" class="form-control" placeholder="start typing to filter"
+      #searchBox (keyup)="search(searchBox.value)" >
+      <div class="glyphicon glyphicon-search input-group-addon" (click)="search(searchBox.value)"></div>
+    </div>
+    <div class="spacer"></div>
+    <div class="pull-left pad-right-left">
+      <!-- <a class="btn btn-success" onclick="openModal()">Add New Hotel</a> -->
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#hotelEditModal" [routerLink]="['new']">Add new Hotel</button>
+    </div>
+  </div>
+
+<div class="modal fade" id="hotelEditModal" tabindex="-1" aria-labelledby="hotelEditModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+  <div class="col" *ngFor="let hotel of hotels | hotelsFilter:term">
+    <div class="card h-100">
+      <img src='{{ hotel.imageUrl }}' class="card-img-top" alt='{{ hotel.hotelTitle}}'>
+      <div class="card-body">
+        <h5 class="card-title">{{ hotel.hotelTitle }}</h5>
+        <p class="card-text">{{ hotel.hotelText }}</p>
+        <p>{{ hotel.phone }} <br>
+          <a href='{{ hotel.hotelUrl }}'>{{ hotel.email }}</a></p>
+          <p><i style='font-size:30px'>&#9758; </i><a href='{{ hotel.hotelUrl }}' class="hotellink">VISIT SITE</a></p>
+      </div>
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#hoteldetailModal" routerLink="edit/{{ hotel.id }}">Edit Details</button>
+      <div class="card-footer text-white bg-dark"
+      data-bs-toggle="modal"
+      data-bs-target="#hotelBookingModal"
+      style="text-align: center; cursor: pointer;" routerLink="booking/{{ hotel.id }}">
+        BOOK NOW
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+<!-- [routerLink]="[{ outlets: { hotelBookingModal: 'booking/{{ hotel.id }}'}}]" -->
+<div class="modal fade" data-bs-backdrop="static" tabindex="-1" id="hotelBookingModal" aria-labelledby="hotelBookingModal" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-100p">
+    <div class="modal-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="hoteldetailModal" tabindex="-10" aria-labelledby="hoteldetailLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

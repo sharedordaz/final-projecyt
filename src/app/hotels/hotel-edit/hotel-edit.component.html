@@ -1,0 +1,104 @@
+<!-- <p>hotel-edit works!</p> -->
+
+<div class="modal-header">
+  <h1 class="modal-title fs-5" id="hotelEditModalLabel">Details of new Hotel</h1>
+  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="onCancel()"></button>
+</div>
+<div class="modal-body">
+  <form
+  id="hotel-edit"
+  (ngSubmit)="onSubmit(f)" #f="ngForm"
+  >
+    <div class="mb-3">
+      <label for="imageUrl" class="col-form-label">Hotel Image Url:</label>
+      <input
+      type="text"
+      class="form-control required"
+      id="imageUrl"
+      name="imageUrl"
+      [ngModel]="hotel?.imageUrl"
+      #imageUrl="ngModel"
+      required
+      >
+    </div>
+    <div class="mb-3">
+      <label for="hotelTitle" class="col-form-label">Name of Hotel:</label>
+      <input
+      type="text"
+      class="form-control"
+      id="hotelTitle"
+      name="hotelTitle"
+      [ngModel]="hotel?.hotelTitle"
+      #hotelTitle="ngModel"
+      required
+      >
+    </div>
+    <div class="mb-3">
+      <label for="hotelText" class="col-form-label">Detailed Description:</label>
+      <textarea
+      type="text"
+      class="form-control"
+      id="hotelText"
+      name="hotelText"
+      #hotelText="ngModel"
+      [ngModel]="hotel?.hotelText"
+      required
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="col-form-label">Phone</label>
+      <input
+      type="text"
+      class="form-control"
+      id="phone"
+      pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
+      name="phone"
+      [ngModel]="hotel?.phone"
+      #phone="ngModel"
+      required
+      >
+    </div>
+    <div class="alert alert-danger"
+        *ngIf="!phone.valid && phone.touched">
+          Enter a valid phone number
+        </div>
+    <div class="mb-3">
+      <label for="email" class="col-form-label">Email:</label>
+      <input
+      type="text"
+      class="form-control"
+      id="email"
+      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+      name="email"
+      [ngModel]="hotel?.email"
+      #email="ngModel"
+      required
+      >
+    </div>
+    <div class="alert alert-danger"
+        *ngIf="!email.valid && email.touched">
+          Enter a valid Email address.
+        </div>
+    <div class="mb-3">
+      <label for="hotelUrl" class="col-form-label">Website Url:</label>
+      <input
+      type="text"
+      class="form-control"
+      id="hotelUrl"
+      name="hotelUrl"
+      [ngModel]="hotel?.hotelUrl"
+      #hotelUrl="ngModel"
+      required
+      >
+    </div>
+    <small class="text-muted">* All fields are required.</small>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="onCancel()">Close</button>
+  <button
+  type="submit" [disabled]="!f.valid"
+  class="btn btn-primary" (click)="onSubmit(f)"
+  >Save</button>
+</div>
