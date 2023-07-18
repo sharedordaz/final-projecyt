@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 
 require('dotenv').config()
 
-const hotelRoutes = require("./routes/hotels");
+const runController = require("./controller.js")
+//const hotelRoutes = require("./routes/hotels");
 
 const app = express();
 
@@ -29,7 +30,7 @@ app.use((req, res, next) => {
 });
 
 
-app.use("/api/hotels", hotelRoutes);
+app.use("/api", runController);
 
 
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Album, Artist, Song } from '../database.model';
+import { DatabaseService } from '../database.service';
 
 @Component({
   selector: 'sun-artists',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./artists.component.css']
 })
 export class ArtistsComponent implements OnInit {
-
-  constructor() { }
+  artists: Artist[] = [];
+  constructor(private artistService: DatabaseService) { }
 
   ngOnInit(): void {
+    this.artistService.fetchArtists().subscribe(
+      (data) => {
+        this.artists = data;
+        this.artistService.setArtists(data);
+      },
+      (error) => {
+        console.error("Error fetching artists", error);
+      }
+    )
   }
 
 }
