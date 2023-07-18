@@ -16,6 +16,9 @@ import { HotelsService } from './hotels/hotels.service';
 import { HotelDetailComponent } from './hotels/hotel-detail/hotel-detail.component';
 import { HotelsFilterPipe } from './hotels/hotels-filter.pipe';
 import { HotelBookingComponent } from './hotels/hotel-booking/hotel-booking.component';
+import { AlbumsComponent } from './albums/albums.component';
+import { SingersComponent } from './singers/singers.component';
+import { SongsComponent } from './songs/songs.component';
 
 
 @NgModule({
@@ -30,6 +33,9 @@ import { HotelBookingComponent } from './hotels/hotel-booking/hotel-booking.comp
     HotelDetailComponent,
     HotelsFilterPipe,
     HotelBookingComponent,
+    AlbumsComponent,
+    SingersComponent,
+    SongsComponent,
   ],
   imports: [
     BrowserModule,
