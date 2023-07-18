@@ -6,19 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { HotelsComponent } from './hotels/hotels.component';
-import { GardenCourtComponent } from './garden-court/garden-court.component';
-import { ResortsComponent } from './resorts/resorts.component';
 import { WinRefService } from './win-ref.service';
 import { HttpClientModule } from '@angular/common/http';
-import { HotelEditComponent } from './hotels/hotel-edit/hotel-edit.component';
-import { HotelsService } from './hotels/hotels.service';
-import { HotelDetailComponent } from './hotels/hotel-detail/hotel-detail.component';
-import { HotelsFilterPipe } from './hotels/hotels-filter.pipe';
-import { HotelBookingComponent } from './hotels/hotel-booking/hotel-booking.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { SingersComponent } from './singers/singers.component';
 import { SongsComponent } from './songs/songs.component';
+import { DatabaseService } from './database.service';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -26,16 +20,10 @@ import { SongsComponent } from './songs/songs.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HotelsComponent,
-    GardenCourtComponent,
-    ResortsComponent,
-    HotelEditComponent,
-    HotelDetailComponent,
-    HotelsFilterPipe,
-    HotelBookingComponent,
     AlbumsComponent,
     SingersComponent,
     SongsComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,8 +34,8 @@ import { SongsComponent } from './songs/songs.component';
 
   ],
   providers: [
-    HotelsService,
-    WinRefService
+    WinRefService,
+    DatabaseService
   ],
   bootstrap: [AppComponent]
 })
