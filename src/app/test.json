@@ -1,0 +1,42 @@
+{
+  "name": "The Beatles",
+  "genre": "Rock",
+  "albums": [
+    {
+      "title": "White Album",
+      "releaseYear": 1968,
+      "songs": [
+        {
+          "title": "While My Guitar Gently Weeps",
+          "duration": "4:45"
+        },
+        {
+          "title": "Blackbird",
+          "duration": "2:18"
+        },
+        {
+          "title": "Back in the U.S.S.R.",
+          "duration": "2:43"
+        }
+      ]
+    },
+    {
+      "title": "Sgt. Pepper's Lonely Hearts Club Band",
+      "releaseYear": 1967,
+      "songs": [
+        {
+          "title": "Lucy in the Sky with Diamonds",
+          "duration": "3:28"
+        },
+        {
+          "title": "With a Little Help from My Friends",
+          "duration": "2:44"
+        },
+        {
+          "title": "A Day in the Life",
+          "duration": "5:33"
+        }
+      ]
+    }
+  ]
+}

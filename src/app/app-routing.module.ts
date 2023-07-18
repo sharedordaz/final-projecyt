@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AlbumsComponent } from './albums/albums.component';
+import { ArtistsComponent } from './artists/artists.component';
 import { HomeComponent } from './home/home.component';
-import { SingersComponent } from './singers/singers.component';
 import { SongsComponent } from './songs/songs.component';
 
 const routes: Routes = [
@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: "home", component: HomeComponent },
   //{ path: '', redirectTo: '/singers', pathMatch: 'full' }, //default route
   {
-    path: 'singers', component: SingersComponent,
+    path: 'artists', component: ArtistsComponent,
     children: []
   },
 

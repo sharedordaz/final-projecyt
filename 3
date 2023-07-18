@@ -9,19 +9,11 @@ import { Artist, Song, Album } from './database.model';
 })
 export class DatabaseService {
   private apiURL = "http://localhost:3000/api/artists";
-  private artists: Artist[] = [];
+  private music: Artist[] = [];
 
   constructor(private http: HttpClient) { }
 
   fetchArtists(): Observable<Artist[]> {
     return this.http.get<Artist[]>(this.apiURL);
-  }
-
-  getArtists(): Artist[] {
-    return this.artists;
-  }
-
-  setArtists(artists: Artist[]): void {
-    this.artists = artists;
   }
 }

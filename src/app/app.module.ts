@@ -9,10 +9,10 @@ import { FooterComponent } from './footer/footer.component';
 import { WinRefService } from './win-ref.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AlbumsComponent } from './albums/albums.component';
-import { SingersComponent } from './singers/singers.component';
 import { SongsComponent } from './songs/songs.component';
 import { DatabaseService } from './database.service';
 import { HomeComponent } from './home/home.component';
+import { ArtistsComponent } from './artists/artists.component';
 
 
 @NgModule({
@@ -21,9 +21,9 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     FooterComponent,
     AlbumsComponent,
-    SingersComponent,
     SongsComponent,
     HomeComponent,
+    ArtistsComponent,
   ],
   imports: [
     BrowserModule,
