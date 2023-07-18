@@ -9,7 +9,11 @@ const runController = require("./controller.js")
 
 const app = express();
 
-mongoose.connect(process.env.DBURI)
+let DBURI = `mongodb+srv://${process.env.DBUSER}:${process.env.DBPASSWORD}@${process.env.HOST}/Rock-me-this?retryWrites=true&w=majorityprocess.env.DBURI`;
+
+console.log(DBURI);
+
+mongoose.connect(DBURI)
   .then(() => {
     console.log('connected to database!')
   })
