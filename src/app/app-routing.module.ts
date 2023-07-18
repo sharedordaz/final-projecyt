@@ -9,21 +9,20 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: "home", component: HomeComponent },
   //{ path: '', redirectTo: '/singers', pathMatch: 'full' }, //default route
-  // {path: 'booking/:id', component: HotelBookingComponent, outlet: 'hotelBookingModal'},
   {
     path: 'singers', component: SingersComponent,
     children: []
-  }, //hotel children routes
+  },
 
   {
     path: 'albums', component: AlbumsComponent,
     children: []
-  }, //Resorts children routes
+  },
 
   {
     path: 'songs', component: SongsComponent,
     children: []
-  }, //Garden Courts children routes
+  },
 ];
 
 @NgModule({
