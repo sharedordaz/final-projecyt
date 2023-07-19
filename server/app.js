@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 require('dotenv').config()
 
-const runController = require("./controller.js")
+const runController = require("./controller.js");
 //const hotelRoutes = require("./routes/hotels");
 
 const app = express();

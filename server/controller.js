@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const path = require('path');
+const mongoose = require('mongoose');
+const noModel = require('./models/noSchema');
 
-const Artist = require("./models/artists.js");
 
 //const jsonparser = express.json();
 //const urlparser = express.urlencoded({ extended: true });
@@ -9,7 +10,8 @@ const Artist = require("./models/artists.js");
 
 router.get("/artists", async (req, res, next) => {
   try {
-    const artists = await Artist.find();
+    const artists = await noModel.find();
+    console.log(artists.json);
     res.json(artists);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch artists' });

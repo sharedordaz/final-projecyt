@@ -8,7 +8,7 @@ import { Artist, Song, Album } from './database.model';
   providedIn: 'root'
 })
 export class DatabaseService {
-  private apiURL = "http://localhost:3000/api/artists";
+  private apiURL = "http://127.0.0.1:4200/api/artists";
   private artists: Artist[] = [];
 
   constructor(private http: HttpClient) { }
